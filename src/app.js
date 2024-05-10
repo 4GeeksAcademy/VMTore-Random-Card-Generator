@@ -5,72 +5,63 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-//window.onload = function() {};
+window.onload = function() {
+  const newCard = () => {
+    const numbers = [
+      "A",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "J",
+      "Q",
+      "K"
+    ];
 
-const newCard = () => {
-  let min = 1;
-  let max = 12;
+    const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+    console.log(randomNumber);
+    let putNumber = document.getElementById("number-card");
+    putNumber.textContent = randomNumber;
+  };
 
-  const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
-  return randomNumber;
+  //Función que cambia el color del palo correspondiente
+
+  const randomSuitCard = () => {
+    const suits = ["♦", "♥", "♠", "♣"];
+    let suit = Math.floor(Math.random() * suits.length);
+    let headerSuit = document.getElementById("header-number");
+    let footerSuit = document.getElementById("footer-number");
+
+    if (suit === 0) {
+      headerSuit.textContent = "♣";
+      footerSuit.textContent = "♣";
+      headerSuit.style.color = "black";
+      footerSuit.style.color = "black";
+    } else if (suit === 1) {
+      headerSuit.textContent = "♠";
+      footerSuit.textContent = "♠";
+      headerSuit.style.color = "black";
+      footerSuit.style.color = "black";
+    } else if (suit === 2) {
+      headerSuit.textContent = "♥";
+      footerSuit.textContent = "♥";
+      headerSuit.style.color = "red";
+      footerSuit.style.color = "red";
+    } else {
+      headerSuit.textContent = "♦";
+      footerSuit.textContent = "♦";
+      headerSuit.style.color = "red";
+      footerSuit.style.color = "red";
+    }
+  };
+
+  document.querySelector("#button-new-card").addEventListener("click", () => {
+    randomSuitCard();
+    newCard();
+  });
 };
-console.log(newCard());
-/*const newCard = document.querySelector("#number-card");
-console.log(newCard);*/
-/*const newCard = () => {
-  const numbers = [
-    "A",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K",
-  ];
-  const suits = ["♦", "♥", "♠", "♣"];
-
-  const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-  const randomSuit = suits[Math.floor(Math.random() * suits.length)];
-
-  newCard(randomNumber, randomSuit);
-};*/
-
-//Función que devuelve un palo aleatorio con su color correspondiente
-
-/*const randomSuit = () => {
-  let suit = Math.floor(Math.random() * 4);
-  let headerSuit = document.getElementById("#header-number");
-  let footerSuit = document.getElementById("#footer-number");
-
-  if (suit === 0) {
-    suit = "♣";
-    headerSuit.style.color = "black";
-    footerSuit.style.color = "black";
-  } else if (suit === 1) {
-    suit = "♠";
-    headerSuit.style.color = "black";
-    footerSuit.style.color = "black";
-  } else if (suit === 2) {
-    suit = "♥";
-    headerSuit.style.color = "red";
-    footerSuit.style.color = "red";
-  } else {
-    suit = "♦";
-    headerSuit.style.color = "red";
-    footerSuit.style.color = "red";
-  }
-
-  return suit(color);
-};
-
-randomSuit();*/
-
-//♦ ♥ ♠ ♣
-
-//TERNARIO = if (a>10){b=5}else{b=15}          ///////////     a>10? b=5 : b=15;
