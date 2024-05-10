@@ -16,10 +16,11 @@
 
   <body>
     <div
+      onload="newCard()"
       class="container-fluid d-flex justify-content-center align-items-center"
     >
       <div
-        class="card border-light mb-3 d-flex justify-content-center"
+        class="card mb-3"
         style="width: 400px; height: 600px;"
         id="card-body"
       >
@@ -27,6 +28,7 @@
           class="card-header bg-transparent"
           style="border-bottom-style: none;"
           id="header-number"
+          onload="randomSuit()"
         >
           Header
         </div>
@@ -39,6 +41,7 @@
           class="card-footer bg-transparent"
           style="border-top-style: none;"
           id="footer-number"
+          onload="randomSuit()"
         >
           Footer
         </div>
@@ -46,7 +49,12 @@
     </div>
 
     <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-primary">
+      <button
+        onclick="newCard()"
+        type="button"
+        class="btn btn-primary"
+        id="button-new-card"
+      >
         Give me a card
       </button>
     </div>
@@ -55,5 +63,6 @@
       Made with ❤️ by VMTore for
       <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
     </div>
+    <script src="/src/app.js"></script>
   </body>
 </html>
