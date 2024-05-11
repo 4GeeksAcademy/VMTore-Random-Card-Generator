@@ -64,4 +64,6 @@ window.onload = function() {
     randomSuitCard();
     newCard();
   });
+  newCard();
+  randomSuitCard();
 };

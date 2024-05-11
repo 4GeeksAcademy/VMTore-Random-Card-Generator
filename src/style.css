@@ -9,6 +9,7 @@ body {
   border-style: solid;
   border-color: black;
   background-color: rgb(255, 255, 255);
+  border-radius: 4%;
 }
 
 #header-number {
@@ -28,4 +29,5 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 150px;
+  font-family: "Kelly Slab", sans-serif;
 }
